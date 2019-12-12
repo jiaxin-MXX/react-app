@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import {Bottom} from './center.js'
 import { Switch,Route,Redirect } from 'react-router-dom'
 import {Zhezhao } from './home/home'
+import {withRouter} from 'react-router-dom'
+
 
 import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
+import product from 'pages/product/product.jsx'
 import { connect } from 'react-redux'
-import Nav from './nav' 
+import Nav from './nav'
+
+
 let mapstatetoprops = (state)=>{
     return {
         src:state.Home.src,
@@ -41,6 +46,10 @@ class center extends Component {
                         path='/classfiy'
                         component={classfiy}
                     />
+                    <Route 
+                        path='/product'
+                        component={product}
+                    />
                     <Redirect 
                         exact
                         from='/'
@@ -48,11 +57,11 @@ class center extends Component {
                     />
                 </Switch>
                 <Route 
-                    component={Nav}
+                    component={ this.props.location.pathname !== '/product'?Nav:''}
                 />
             </Bottom>
         );
     }
 }
 
-export default center;
+export default withRouter(center);

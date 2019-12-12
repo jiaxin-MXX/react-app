@@ -55,6 +55,7 @@ class nav extends Component {
     }
     render() {
         let path = this.props.location.pathname
+       
         return (
             <Nav>
                 {
