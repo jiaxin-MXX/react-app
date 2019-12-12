@@ -23,6 +23,9 @@ class fenlei extends Component {
                 client_id:'logitech'
             }
         })
+        this.list=await postData({
+            
+        })
         console.log(this.result)
     }
     render() {
