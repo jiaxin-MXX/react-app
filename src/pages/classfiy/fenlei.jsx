@@ -5,6 +5,7 @@ class fenlei extends Component {
     constructor(){
         super()
         this.state={
+            list1:[],
             defaultitem:'鼠标'
         }
     }
@@ -17,23 +18,25 @@ class fenlei extends Component {
         }
     }
     async componentDidMount(){
-        this.result =await postData({
+        let result =await postData({
             url:'/api/services/app/tags/GetLgParenTagList',
             headers:{
                 client_id:'logitech'
             }
         })
-        this.list=await postData({
+        // this.list=await postData({
             
+        // })
+        this.setState({
+            list1:result
         })
-        console.log(this.result)
     }
     render() {
         return (
             <Center>
                 <div className="category-nav">
                     {
-                        this.result && this.result.map((value)=>{
+                        this.state.list1.map((value)=>{
                             return (
                                 (this.state.defaultitem === value.title)
                                 ?<div key={value.id} className="item active">{value.title}</div>

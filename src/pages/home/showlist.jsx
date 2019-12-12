@@ -60,6 +60,7 @@ class showlist extends Component {
             showlist:result
         })
         let scroll=this.props.scroll
+        
         scroll.on('pullingUp',async ()=>{
             result = await this.getlist({
                 Skip,
