@@ -22,7 +22,7 @@ class homs extends Component {
                 <Swiper></Swiper>
                 <Gonggao></Gonggao>
                 <GongGe></GongGe>
-                <Ingetral ></Ingetral>
+                <Ingetral></Ingetral>
                 <Slide></Slide>
                 <Showlist></Showlist>
             </div>

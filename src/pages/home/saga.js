@@ -17,4 +17,6 @@ function* getlist(action) {
       });
    } catch (e) {}
 }
+
+
 export default getlist

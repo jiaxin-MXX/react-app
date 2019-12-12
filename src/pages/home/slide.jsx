@@ -10,15 +10,6 @@ function mapstatetoProps(state) {
 
 class slide extends Component {
     componentDidMount() {
-        // new Swiper('.swiper-container', {
-        //     slidesPerView: 2,//一行显示2个
-        //     slidesPerColumn: 2,//显示2行
-        //     spaceBetween: 15,
-        //     pagination: {
-        //         el: '.swiper-pagination',
-        //         bulletActiveClass: 'my-bullet-active',
-        //     },
-        // })
     }
     render() {
         if (this.props.data) {

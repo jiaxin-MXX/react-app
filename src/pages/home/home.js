@@ -311,6 +311,29 @@ export const GonggaoWrap = styled.div`
     }
     
 `
+export const Zhezhao=styled.div`
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,.9);
+    z-index:1;
+    .close{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: .196265rem .145065rem 0 0;
+        span{
+            width:.14078rem;
+            height:.14078rem;
+            font-size:.14078rem;
+            color:#ccc
+        }
+    }
+    video{
+        position: absolute;
+        top: 27%
+    }
+`
 
 export const ShowWrap = styled.ul`
     padding: .0896rem;
@@ -320,7 +343,7 @@ export const ShowWrap = styled.ul`
         border-radius: .033333rem;
         margin-bottom: .068265rem;
         .item-product{
-            a{
+            .Adiv{
                 display: flex;
                 .product-img{
                     width: .957395rem;

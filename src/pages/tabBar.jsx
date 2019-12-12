@@ -1,6 +1,9 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
+
 import Home from './home/homs'
+import Classfiy from './classfiy/classfiy'
+
 import BScroll from 'better-scroll'
 
 import home from 'assets/svg/home.svg'
@@ -14,6 +17,18 @@ import cartActive from 'assets/svg/cart-active.svg'
 import mine from 'assets/svg/mine.svg'
 import mineActive from 'assets/svg/mine-active.svg'
 
+import { connect } from 'react-redux'
+
+import {Zhezhao } from './home/home'
+// import { BrowserRouter as Router } from 'react-router-dom'
+let mapstatetoprops = (state)=>{
+  return {
+    scroll:state.Home.scroll,
+    src:state.Home.src,
+  }
+}
+
+@connect(mapstatetoprops)
 class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
@@ -23,17 +38,38 @@ class TabBarExample extends React.Component {
       fullScreen: true,
     };
   }
+  handclick(){
+    return ()=>{
+      this.props.dispatch({
+        type:'src',
+        src:'',
+      })
+    }
+  }
   componentDidMount(){
-    this.scroll=new BScroll('.am-tab-bar-item',{
-          click:true
+    let scroll=new BScroll('.am-tab-bar-item',{
+      click:true,
+      pullUpLoad:true,
+      probeType:2,
+    }) 
+    this.props.dispatch({
+      type:'scroll',
+      scroll,
     })
     setTimeout(()=>{
-      this.scroll.refresh()
+      scroll.refresh()
     },0)
   }
   render() {
     return (
-      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+      <>
+      <Zhezhao ref='zhezhao' className='zhezhao' style={{display:this.props.src?"block":'none'}}>
+        <div className="close">
+            <span onClick={this.handclick()}>X</span>
+        </div>
+        <video ref='video' autoPlay="autoplay" controls="controls" src={this.props.src} style={{width: '100%'}}></video>
+      </Zhezhao>
+      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0,background:'#f4f4f4' } : { height: 400 }}>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#949494"
@@ -90,7 +126,7 @@ class TabBarExample extends React.Component {
             }}
             data-seed="logId1"
           >
-            <div>b</div>
+            <Classfiy></Classfiy>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -172,6 +208,7 @@ class TabBarExample extends React.Component {
           </TabBar.Item>
         </TabBar>
       </div>
+      </>
     );
   }
 }

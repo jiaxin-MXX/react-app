@@ -1,13 +1,47 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import {Icon} from 'antd-mobile'
+import {Top} from './search'
 
-class search extends Component {
+function mapStateToProps(state){
+    return {
+        data:state.Home.data
+    }
+}
+const mapDispatchProps=(dispatch)=>{
+    return {
+        getlist(){dispatch({
+            type:"getlist",
+            url:"/api/services/app/page/GetLgPageList",
+            headers:{
+                client_id:'logitech'
+            }
+        })}
+    }
+}
+class top extends Component {
+    constructor(){
+        super()
+        this.state={}
+    }
+    componentDidMount(){
+        
+    }
+
     render() {
+        // console.log(this.props.data)
         return (
-            <div>
-                
-            </div>
+            <Top
+            width="0 0 1px 0"
+            color='red'
+            className="search1">
+                <a href='index' key="search-cont" className="search-cont">
+                    <Icon type="search" size='xxs' />
+                    搜索商品
+                </a>
+            </Top>
         );
     }
 }
 
-export default search;
+export default connect(mapStateToProps,mapDispatchProps)(top);

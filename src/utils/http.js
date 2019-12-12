@@ -8,12 +8,12 @@ export const post = async function({url,headers}){
     return result.data.result
 }
 
-export const postData = async function({url,headers,data}){
+export const postData = async function({url,headers,params}){
     let result = await axios({
         url,
         method:'post',
         headers,
-        data
+        params
     })
     return result.data.result
 }
