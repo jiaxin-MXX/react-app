@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Wrap} from './product'
+// 123
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Top from './top' 
 import Swiper from './swiper' 
 import Info from './info'
-// 123
 function mapStateToProps(state){
     return {
         data:state.Prodcut.data
