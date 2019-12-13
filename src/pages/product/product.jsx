@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import {Wrap} from './product'
+import { Wrap} from './product'
 import { withRouter } from 'react-router-dom'
-
+import { connect } from 'react-redux'
+import Top from './top' 
+import Swiper from './swiper' 
+import Info from './info'
+function mapStateToProps(state){
+    return {
+        data:state.Prodcut.data
+    }
+}
 @withRouter
+@connect(mapStateToProps)
 class product extends Component {
-    back=()=>{
-        this.props.history.goBack()
+    state={
+        data:null,
+    }
+    componentDidMount(){
+        console.log(this.props)
     }
     render() {
         return (
             <Wrap>
-                <div className="head-box">
-                    <header className="mint-header is-fixed">
-                        <span onClick={this.back}>{'<'}</span>
-                        <div className="mint-header-title">商品详情</div>
-                    </header>
-                </div>
-                <div>
-                    
-                </div>
+                <Top></Top>
+                <div class='scroll'>
+                    <div>
+                        <Swiper></Swiper>
+                        <Info></Info>
+                    </div>
+                </div>   
             </Wrap>
         );
     }

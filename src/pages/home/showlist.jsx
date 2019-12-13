@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ShowWrap} from './home'
 import { postData } from 'utils/http'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+
 
 function mapstatetoprops(state){
     return {
@@ -9,7 +11,7 @@ function mapstatetoprops(state){
         src:state.Home.src
     }
 }
-
+@withRouter
 @connect(mapstatetoprops)
 class showlist extends Component {
     constructor(){
@@ -38,7 +40,13 @@ class showlist extends Component {
     }
     click=(id)=>{
         return ()=>{
-            console.log(id)
+            
+            this.props.history.push({
+                pathname:'/product',
+                state:{
+                    id
+                }
+            })
         }
     }
     videoSrc=(src)=>{
@@ -87,7 +95,7 @@ class showlist extends Component {
                    this.state.showlist.map((value)=>{
                         return ( <li key={value.id} className="item">
                         <div className="item-product">
-                            <div onClick={this.click(value.id)} className="Adiv">
+                            <div onClick={this.click(value.productId)} className="Adiv">
                                 <div className="product-img">
                                     <img alt="" className="responImg" src={value.productImage} lazy="loaded" />
                                 </div>
