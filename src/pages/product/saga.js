@@ -1,7 +1,7 @@
 import {put} from 'redux-saga/effects'
 import {postData} from 'utils/http'
-function* getdata(action) {
-   console.log(action)
+export function* getdata(action) {
+   // console.log(action)
    try{
       
       const result = yield postData({
@@ -18,4 +18,19 @@ function* getdata(action) {
 }
 
 
-export default getdata
+export function* getExtend(action) {
+   // console.log(action)
+   try{
+      
+      const result = yield postData({
+         url:action.url,
+         headers:action.headers,
+         params:action.params
+      });
+      // console.log(result)
+      yield put({
+         type: 'ExtendList', 
+         data:result
+      });
+   } catch (e) {}
+}

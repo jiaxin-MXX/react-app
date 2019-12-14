@@ -20,8 +20,15 @@ export const Top = styled.div`
     }
 `
 export const SwiperWrap = styled.div`
-    font-size: 0;
+    height:37.5vw;
+    .slider {
+        height:100% !important;
+        .slider-frame{
+            height:100% !important;
+        }
+    }
     li{
+        height:100% !important;
         img {
             width: 100%;
         }

@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import { Wrap} from './product'
-// 123
 import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+import BScroll from 'better-scroll'
 import Top from './top' 
 import Swiper from './swiper' 
 import Info from './info'
-function mapStateToProps(state){
-    return {
-        data:state.Prodcut.data
-    }
-}
+import Btm from './bottom'
 @withRouter
-@connect(mapStateToProps)
 class product extends Component {
     state={
         data:null,
     }
     componentDidMount(){
         console.log(this.props)
+        new BScroll('.scroll',{
+            click:true
+        })
     }
     render() {
         return (
             <Wrap>
                 <Top></Top>
-                <div class='scroll'>
+                <div className='scroll'>
                     <div>
                         <Swiper></Swiper>
                         <Info></Info>
                     </div>
-                </div>   
+                </div>
+                <Btm></Btm> 
             </Wrap>
         );
     }

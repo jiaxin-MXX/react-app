@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Bottom} from './center.js'
-import { Switch,Route,Redirect } from 'react-router-dom'
+import { Switch,Route,Redirect,withRouter} from 'react-router-dom'
 import {Zhezhao } from './home/home'
-import {withRouter} from 'react-router-dom'
 
 
+import Search from 'pages/search/search.jsx'
 import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
 import product from 'pages/product/product.jsx'
@@ -37,6 +37,7 @@ class center extends Component {
                     </div>
                     <video ref='video' autoPlay="autoplay" controls="controls" src={this.props.src} style={{width: '100%'}}></video>
                 </Zhezhao>
+                <Search></Search>
                 <Switch>
                     <Route
                         path='/home'
@@ -57,7 +58,7 @@ class center extends Component {
                     />
                 </Switch>
                 <Route 
-                    component={ this.props.location.pathname !== '/product'?Nav:''}
+                    component={ this.props.location.pathname !== '/product' || this.props.location.pathname !== '/search'?Nav:''}
                 />
             </Bottom>
         );

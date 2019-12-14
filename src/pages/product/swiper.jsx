@@ -12,6 +12,9 @@ function mapStateToProps(state){
 @withRouter
 @connect(mapStateToProps)
 class swiper extends Component {
+    state={
+        data:this.props.data
+    }
     play=() =>{
         let Img = this.refs.Iwrap
         let Vedio = this.refs.Vwrap
@@ -24,14 +27,20 @@ class swiper extends Component {
         }
     }
     render() {
-        if(this.props.data){
-            setTimeout(() => {
-                new Swiper1 ('.swiper-container', {
-                    pagination: {
-                    el: '.swiper-pagination',
-                    },
-                }) 
-            }, 0);
+        
+        if(this.props.data !== this.state.data){
+            this.swiper && this.swiper.destroy()
+            new Promise((res,rej)=>{
+                setTimeout(() => {
+                    this.swiper=new Swiper1 ('.swiper-container', {
+                        pagination: {
+                        el: '.swiper-pagination',
+                        },
+                    }) 
+                }, 0);
+                res()
+            })
+            
         }
         
         return (

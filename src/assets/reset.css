@@ -14,9 +14,11 @@ body {
   display: none; }
 
 html {
+  touch-action:none;
   background-color: #eee;
   color: #212121;
   font-size: 100px;
+  font-weight: 300;
   -webkit-user-select: none;
   user-select: none; }
 

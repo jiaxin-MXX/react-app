@@ -18,6 +18,16 @@ const mapDispatchProps=(dispatch)=>{
             params: {
                 id
             }
+        })},
+        getExtend(id){dispatch({
+            type:"Extend",
+            url:"/api/services/app//productPromotionExtend/ProductPromotionExtendList",
+            headers:{
+                client_id:'logitech'
+            },
+            params: {
+                ProductId:id
+            }
         })}
     }
 }
@@ -26,6 +36,7 @@ const mapDispatchProps=(dispatch)=>{
 class top extends Component {
     componentDidMount(){
         this.props.getdata(this.props.location.state.id)
+        this.props.getExtend(this.props.location.state.id)
     }
     back = () => {
         this.props.history.goBack()

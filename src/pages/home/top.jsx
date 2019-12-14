@@ -32,10 +32,10 @@ class top extends Component {
         // console.log(this.props.data)
         return (
             <Top className="search1">
-                <a href='index' key="search-cont" className="search-cont">
+                <div key="search-cont" className="search-cont">
                     <Icon type="search" size='xxs' />
                     搜索商品
-                </a>
+                </div>
             </Top>
         );
     }
