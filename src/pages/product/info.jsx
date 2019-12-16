@@ -3,8 +3,8 @@ import { InfoWrap, Price } from './product.js'
 import { connect } from 'react-redux'
 function mapStateToProps(state) {
         return {
-                data: state.Prodcut.data,
-                ExtendList: state.Prodcut.ExtendList
+                data: state.toJS().Prodcut.data,
+                ExtendList: state.toJS().Prodcut.ExtendList
         }
 }
 @connect(mapStateToProps)

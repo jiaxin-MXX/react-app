@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { Top } from './product'
 function mapStateToProps(state){
     return {
-        data:state.Prodcut.data
+        data:state.toJS().Prodcut.data
     }
 }
 const mapDispatchProps=(dispatch)=>{

@@ -8,8 +8,8 @@ import {GongWrap} from  './home.js'
 
 function mapStateToProps(state){
     return {
-        data:state.Home.data,
-        imglist:state.Home.imglist
+        data:state.toJS().Home.data,
+        imglist:state.toJS().Home.imglist
     }
 }
 class GongGe extends Component {

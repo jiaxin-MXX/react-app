@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { GonggaoWrap } from './home'
 function mapStateToProps(state) {
     return {
-        data:state.Home.data.pageElementItem6
+        data:state.toJS().Home.data.pageElementItem6
     }
 }
 class guangao extends Component { 

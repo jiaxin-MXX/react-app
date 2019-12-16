@@ -7,8 +7,8 @@ import { withRouter } from 'react-router-dom'
 
 function mapstatetoprops(state){
     return {
-        scroll:state.Home.scroll,
-        src:state.Home.src
+        scroll:state.toJS().Home.scroll,
+        src:state.toJS().Home.src
     }
 }
 @withRouter

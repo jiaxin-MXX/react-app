@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Swiper from 'swiper'
 function mapstatetoProps(state) {
     return {
-        data: state.Home.swiper
+        data: state.toJS().Home.swiper
     }
 }
 
@@ -38,7 +38,7 @@ class slide extends Component {
                         <div className="swiper-container product-box">
                             <div className="swiper-wrapper">
                                 {
-                                    value.pageChildElementItem.map((value) => {
+                                    value.pageChildElementItem && value.pageChildElementItem.map((value) => {
                                         return (
                                             <div key={value.product.id} className="swiper-slide item swiper-slide-prev">
                                                 <a href="home">

@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import BScroll from 'better-scroll'
 let mapstatetoprops = (state)=>{
     return {
-      scroll:state.Home.scroll,
+      scroll:state.toJS().Home.scroll,
     }
   }
   

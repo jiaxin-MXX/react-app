@@ -4,9 +4,10 @@ import { Switch,Route,Redirect,withRouter} from 'react-router-dom'
 import {Zhezhao } from './home/home'
 
 
-// import Search from 'pages/search/search.jsx'
+import Search from 'pages/search/search.jsx'
 import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
+// import {  } from 'immutable'
 import product from 'pages/product/product.jsx'
 import { connect } from 'react-redux'
 import Nav from './nav'
@@ -14,7 +15,7 @@ import Nav from './nav'
 
 let mapstatetoprops = (state)=>{
     return {
-        src:state.Home.src,
+        src:state.toJS().Home.src,
     }
   }
   
@@ -37,7 +38,7 @@ class center extends Component {
                     </div>
                     <video ref='video' autoPlay="autoplay" controls="controls" src={this.props.src} style={{width: '100%'}}></video>
                 </Zhezhao>
-                {/* <Search></Search> */}
+                <Search></Search>
                 <Switch>
                     <Route
                         path='/home'
@@ -58,7 +59,9 @@ class center extends Component {
                     />
                 </Switch>
                 <Route 
-                    component={ this.props.location.pathname !== '/product' || this.props.location.pathname !== '/search'?Nav:''}
+                    component={['/product','/search'].some((value)=>{
+                        return value===this.props.location.pathname
+                    })?'':Nav}
                 />
             </Bottom>
         );

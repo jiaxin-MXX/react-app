@@ -5,8 +5,8 @@ import {SwiperWrap} from './home'
 import load from 'assets/imgs/loading.gif'
 function mapStateToProps(state){
     return {
-        data:state.Home.data,
-        imglist:state.Home.imglist
+        data:state.toJS().Home.data,
+        imglist:state.toJS().Home.imglist
     }
 }
 class swiper extends Component {
@@ -23,7 +23,7 @@ class swiper extends Component {
                 dots={this.props.data!==''}
                 >
                 {
-                    this.props.imglist.map((value,index)=>{
+                    this.props.imglist && this.props.imglist.map((value,index)=>{
                         if(typeof(value)==='object'){  
                             return (
                                 <img key={value.id} src={value.url} alt=""/>

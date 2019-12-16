@@ -5,7 +5,7 @@ import {Top} from './search'
 
 function mapStateToProps(state){
     return {
-        data:state.Home.data
+        data:state.toJS().Home.data
     }
 }
 const mapDispatchProps=(dispatch)=>{

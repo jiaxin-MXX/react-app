@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import BScroll from 'better-scroll'
 function mapStateToProps(state){
     return {
-        data:state.Home.data,
-        imglist:state.Home.imglist,
-        lunbo:state.Home.lunbo,
-        lbone:state.Home.lbone,
-        lbtwo:state.Home.lbtwo,
+        data:state.toJS().Home.data,
+        imglist:state.toJS().Home.imglist,
+        lunbo:state.toJS().Home.lunbo,
+        lbone:state.toJS().Home.lbone,
+        lbtwo:state.toJS().Home.lbtwo,
     }
 }
 class ingetral extends Component {
@@ -37,8 +37,7 @@ class ingetral extends Component {
            
             
         } 
-        
-        console.log(this.props.data)
+    
         return (
             this.props.lunbo.map((value,index)=>{
                 url = this.props.data.pageElementItem[2+index].title

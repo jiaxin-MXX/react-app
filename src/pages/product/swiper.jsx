@@ -6,7 +6,7 @@ import Swiper1 from 'swiper'
 import play from 'assets/imgs/onoff.png'
 function mapStateToProps(state){
     return {
-        data:state.Prodcut.data
+        data:state.toJS().Prodcut.data
     }
 }
 @withRouter

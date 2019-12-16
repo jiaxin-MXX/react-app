@@ -5,7 +5,8 @@ import {Top} from './home'
 
 function mapStateToProps(state){
     return {
-        data:state.Home.data
+        data:state.toJS().Home.data,
+        onoff:state.toJS().Search.onoff
     }
 }
 const mapDispatchProps=(dispatch)=>{
@@ -16,6 +17,10 @@ const mapDispatchProps=(dispatch)=>{
             headers:{
                 client_id:'logitech'
             }
+        })},
+        getonoff(){dispatch({
+            type:"on0ff",
+            data:9999
         })}
     }
 }
@@ -27,12 +32,14 @@ class top extends Component {
     componentDidMount(){
         this.props.getlist()
     }
-
+    click(){
+        this.props.getonoff()
+    }
     render() {
         // console.log(this.props.data)
         return (
             <Top className="search1">
-                <div key="search-cont" className="search-cont">
+                <div onClick={this.click} key="search-cont" className="search-cont">
                     <Icon type="search" size='xxs' />
                     搜索商品
                 </div>
