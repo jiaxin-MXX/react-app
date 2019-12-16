@@ -4,7 +4,7 @@ import { Switch,Route,Redirect,withRouter} from 'react-router-dom'
 import {Zhezhao } from './home/home'
 
 
-import Search from 'pages/search/search.jsx'
+// import Search from 'pages/search/search.jsx'
 import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
 import product from 'pages/product/product.jsx'
@@ -37,7 +37,7 @@ class center extends Component {
                     </div>
                     <video ref='video' autoPlay="autoplay" controls="controls" src={this.props.src} style={{width: '100%'}}></video>
                 </Zhezhao>
-                <Search></Search>
+                {/* <Search></Search> */}
                 <Switch>
                     <Route
                         path='/home'
