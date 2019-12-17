@@ -19,8 +19,8 @@ const mapDispatchProps=(dispatch)=>{
             }
         })},
         getonoff(){dispatch({
-            type:"on0ff",
-            data:9999
+            type:"display",
+            onoff:9999
         })}
     }
 }
@@ -32,7 +32,7 @@ class top extends Component {
     componentDidMount(){
         this.props.getlist()
     }
-    click(){
+    click=()=>{
         this.props.getonoff()
     }
     render() {

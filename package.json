@@ -9,10 +9,12 @@
     "better-scroll": "^1.15.2",
     "eject": "^0.0.4",
     "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "react-transition-group": "^4.3.0",
     "redux-immutable": "^4.0.0",
     "swiper": "^5.2.1"
   },

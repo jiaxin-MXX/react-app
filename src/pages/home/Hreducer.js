@@ -4,7 +4,7 @@ const defaultState=Map({
     imglist:['','',''],
     lunbo:[],
     swiper:[],
-    scroll:123,
+    scroll:'',
     src:'',
 })
 export const Hreducers = (state=defaultState,action)=>{

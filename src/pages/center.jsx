@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Bottom} from './center.js'
 import { Switch,Route,Redirect,withRouter} from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group';
 import {Zhezhao } from './home/home'
 
 
@@ -16,6 +17,7 @@ import Nav from './nav'
 let mapstatetoprops = (state)=>{
     return {
         src:state.toJS().Home.src,
+        onoff:state.toJS().Search.onoff,
     }
   }
   
@@ -38,7 +40,25 @@ class center extends Component {
                     </div>
                     <video ref='video' autoPlay="autoplay" controls="controls" src={this.props.src} style={{width: '100%'}}></video>
                 </Zhezhao>
-                <Search></Search>
+                <CSSTransition 
+                in={this.props.onoff===-1?false:true} 
+                timeout={1000} 
+                classNames={{
+                    enter: 'animated',
+                    enterActive: 'fadeInRight',
+                    exit: 'animated',
+                    exitActive: 'fadeOutRight',
+                }}
+                onExiting={(cmp)=>{
+                    cmp.style.zIndex=9999
+          
+                }}
+                onExited={(cmp)=>{
+                    cmp.style.zIndex=-1
+                }}
+                >
+                    <Search></Search>
+                </CSSTransition>
                 <Switch>
                     <Route
                         path='/home'

@@ -58,6 +58,7 @@ class showlist extends Component {
         }
     }
     async componentDidMount(){
+        console.log(this.props)
         let Skip = 0
         let result = await this.getlist({
             Skip,
@@ -68,24 +69,25 @@ class showlist extends Component {
             showlist:result
         })
         let scroll=this.props.scroll
-        
-        scroll.on('pullingUp',async ()=>{
-            result = await this.getlist({
-                Skip,
-                Count:10,
-            }) 
-            this.setState({
-                showlist:[
-                    ...this.state.showlist,
-                    ...result
-                ]
+        // if(scroll){
+            scroll.on('pullingUp',async ()=>{
+                result = await this.getlist({
+                    Skip,
+                    Count:10,
+                }) 
+                this.setState({
+                    showlist:[
+                        ...this.state.showlist,
+                        ...result
+                    ]
+                })
+                Skip++
+                scroll.finishPullUp()
+                setTimeout(() => {
+                    scroll.refresh()
+                }, 0);
             })
-            Skip++
-            scroll.finishPullUp()
-            setTimeout(() => {
-                scroll.refresh()
-            }, 0);
-        })
+        // }
     }
     render() {
         return (
