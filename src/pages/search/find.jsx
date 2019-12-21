@@ -1,6 +1,7 @@
 import React from 'react';
 import { Find,LL } from './search.js'
 import {connect} from 'react-redux'
+import { widthRouter } from 'react-router-dom'
 function mapstate(state){
     return {
         ok:state.toJS().Search.ok
@@ -9,8 +10,13 @@ function mapstate(state){
 
 const find = (props)=>{
     let click=(value)=>{
-        return()=>{
-            console.log(value)
+        return ()=>{
+            props.history.push({
+                pathname:'/list',
+                state:{
+                    value
+                }
+            })
         }
     }
     return (

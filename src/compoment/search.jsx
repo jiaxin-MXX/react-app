@@ -35,7 +35,7 @@ class top extends Component {
             width="0 0 1px 0"
             color='red'
             className="search1">
-                <a href='index' key="search-cont" className="search-cont">
+                <a href='home' key="search-cont" className="search-cont">
                     <Icon type="search" size='xxs' />
                     搜索商品
                 </a>

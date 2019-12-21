@@ -175,7 +175,7 @@ export const Slidewrap = styled.div`
             display:flex;
             flex-wrap: wrap;
             flex-direction:column;
-            height:4.83415rem;
+            height: 143vw;
             .swiper-slide {
                 flex-shrink: 0;
                 width: 100%;
@@ -187,6 +187,7 @@ export const Slidewrap = styled.div`
                 box-shadow: 0 0.026667rem 0.12rem 0 hsla(0,0%,40%,.28);
                 border-radius: .033333rem;
                 width: 1.46rem;
+                height: 66.66667vw;
                 margin-bottom: .0678rem;
                 /* margin-right: .05rem; */
                 .item-img {
@@ -402,7 +403,7 @@ export const ShowWrap = styled.ul`
                     border-radius: 30%;
                     background: #f4f4f4;
                     font-size: .093865rem;
-                    margin-right: .093865rem;
+                    margin-right: .083865rem;
                 }
             }
             .other-right{

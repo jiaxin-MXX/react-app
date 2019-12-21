@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import {IngetralWrap} from './home'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import BScroll from 'better-scroll'
 function mapStateToProps(state){
     return {
@@ -11,6 +12,7 @@ function mapStateToProps(state){
         lbtwo:state.toJS().Home.lbtwo,
     }
 }
+@withRouter
 class ingetral extends Component {
     constructor(){
         super()
@@ -20,6 +22,17 @@ class ingetral extends Component {
     componentDidMount(){
         
         
+    }
+    click=(id)=>{
+        return ()=>{
+            
+            this.props.history.push({
+                pathname:'/product',
+                state:{
+                    id
+                }
+            })
+        }
     }
     render() {
         let more,url,title1,title2
@@ -67,7 +80,7 @@ class ingetral extends Component {
                                     return (
                                         <div key={value.product.id} className="swiper-slide item swiper-slide-active">
                                         <div  className="item-main">
-                                            <a data-v-e8942a1c="" href="home" className="">
+                                            <div onClick={this.click(value.product.id)} data-v-e8942a1c=""  className="a">
                                                 <div className="item-img">
                                                     <img alt="" className="responImg" src={value.product.picUrl} lazy="loaded" />
                                                 </div>
@@ -76,7 +89,7 @@ class ingetral extends Component {
                                                     <p className="price-1"><span className="price">¥{value.product.price}</span>
                                                         <span className="integral">{value.product.point?`+${value.product.point}积分`:''}</span></p>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
                                         </div>
                                     )

@@ -10,6 +10,7 @@ import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
 // import {  } from 'immutable'
 import product from 'pages/product/product.jsx'
+import list from 'pages/List/list.jsx'
 import { connect } from 'react-redux'
 import Nav from './nav'
 
@@ -72,6 +73,10 @@ class center extends Component {
                         path='/product'
                         component={product}
                     />
+                    <Route 
+                        path='/list'
+                        component={list}
+                    />
                     <Redirect 
                         exact
                         from='/'
@@ -79,7 +84,7 @@ class center extends Component {
                     />
                 </Switch>
                 <Route 
-                    component={['/product','/search'].some((value)=>{
+                    component={['/product','/search','/list'].some((value)=>{
                         return value===this.props.location.pathname
                     })?'':Nav}
                 />

@@ -17,3 +17,13 @@ export const postData = async function({url,headers,params}){
     })
     return result.data.result
 }
+
+export const post2 = async function({url,headers,data}){
+    let result = await axios({
+        url,
+        method:'post',
+        headers,
+        data
+    })
+    return result.data.result
+}

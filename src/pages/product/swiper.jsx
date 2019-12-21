@@ -29,18 +29,15 @@ class swiper extends Component {
     render() {
         
         if(this.props.data !== this.state.data){
-            this.swiper && this.swiper.destroy()
-            new Promise((res,rej)=>{
-                setTimeout(() => {
+            
+            setTimeout(() => {
+                this.swiper && this.swiper.destroy()
                     this.swiper=new Swiper1 ('.swiper-container', {
                         pagination: {
                         el: '.swiper-pagination',
                         },
                     }) 
-                }, 0);
-                res()
-            })
-            
+                }, 0);        
         }
         
         return (

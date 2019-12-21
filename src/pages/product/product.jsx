@@ -7,6 +7,8 @@ import Swiper from './swiper'
 import Info from './info'
 
 import Btm from './bottom'
+import Count from './count'
+import Eval from './evaluate'
 @withRouter
 class product extends Component {
     state={
@@ -26,6 +28,8 @@ class product extends Component {
                     <div>
                         <Swiper></Swiper>
                         <Info></Info>
+                        <Count></Count>
+                        <Eval></Eval>
                     </div>
                 </div>
                 <Btm></Btm> 

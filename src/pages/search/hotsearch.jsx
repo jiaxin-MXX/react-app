@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hot } from './search.js'
 import {connect} from 'react-redux'
+import {withRouter } from 'react-router-dom'
 import _ from 'lodash'
 function mapstate(state){
     return {
@@ -10,7 +11,12 @@ function mapstate(state){
 const hotsearch = (props)=>{
     let click=(value)=>{
         return ()=>{
-            console.log(value)
+            props.history.push({
+                pathname:'/list',
+                state:{
+                    value
+                }
+            })
         }
     }
     return (
@@ -28,4 +34,4 @@ const hotsearch = (props)=>{
             </Hot>
     )
 }
-export default connect(mapstate)(hotsearch);
+export default withRouter(connect(mapstate)(hotsearch));

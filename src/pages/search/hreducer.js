@@ -2,7 +2,7 @@ import { Map } from 'immutable'
 const defaultstate=Map({
     onoff:-1,
     search:null,
-    his:null,
+    his:[],
     ok:null,
 })
 export const hreducer = (state=defaultstate,action)=>{
