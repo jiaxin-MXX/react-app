@@ -232,6 +232,7 @@ export const Coun = styled.div`
 
 export const Eval = styled.div`
     background: #fff;
+    margin-bottom: .085335rem;
     .line-box {
         height: .37544rem;
         justify-content: space-between;
@@ -267,7 +268,6 @@ export const Eval = styled.div`
     .evaluation{
         white-space: nowrap;
         position: relative;
-        padding: .085335rem 0;
         width: fit-content;
         .item{
             display: inline-block;
@@ -306,6 +306,222 @@ export const Eval = styled.div`
             &:first-child {
                 margin-left: .085335rem;
             }
+        }
+    }
+`
+
+
+export const Combo = styled.div`
+    background: #fff;
+    margin-bottom: .085335rem;
+    .swiper-slide{
+        box-sizing: content-box;
+        width: 84.34782vw !important;
+        height: 1.4805rem;
+        background: #fff;
+        box-shadow: 0 0.026667rem 0.133333rem 0 hsla(0,0%,40%,.28);
+        border-radius: .033333rem;
+        padding: 0 .0896rem;
+        margin-right:.08rem;
+    }
+    .swiper-wrapper{
+        padding: 0 .068265rem .196265rem;
+    }
+    .swiper-pagination{
+        bottom: 0px !important;
+    }
+    .recommend{
+        text-align: center;
+        font-size: .12rem;
+        padding: .128rem 0;
+        font-weight: 500;
+    }
+    .slide-top{
+            display: flex;
+            justify-content: space-between;
+            height: .384rem;
+            align-items: center;
+            .head{
+                display: flex;
+                justify-content: space-between;
+                height: .384rem;
+                align-items: center;
+                .name{
+                    font-size: .11rem;
+                    margin-right: .098135rem;
+                }
+                .price{
+                    font-size: .115rem;
+                    color: #ff4259;
+                    font-weight: 500;
+                    margin-right: .072535rem;
+                    margin-top: .021335rem;
+                    .yuan{
+                        font-size: .09rem;
+                        color: #ff4259;
+                    }
+                }
+                .price-original{
+                    color: #999;
+                    font-size: .1rem;
+                    text-decoration: line-through;
+                    margin-right: .09813rem;
+                    .yuan{
+                        color: #999;
+                        font-size: .09rem;
+                    }
+                }
+                .save{
+                    font-size: .11rem;
+                }
+            }
+            .btn-red{
+                width: .537625rem;
+                height: .19631rem;
+                background: #fd2645;
+                border-radius: .033333rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: .11rem;
+            }
+        }
+        .slide-main{
+            height: 1.01119rem;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            .item{
+                flex: 1;
+                width: 25%;
+                .a{
+                    display:block;
+                    .item-img{
+                        width: 100%;
+                        img{
+                            width: .618625rem;
+                            margin: auto;
+                        }
+                    }
+                    .item-content{
+                        padding: 0 .059735rem;
+                        .name{
+                            color: #999;
+                            font-size: .1rem;
+                            margin-bottom: .064rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                        .price{
+                                color: #fd2645;
+                        }
+                    }
+                }
+            }
+        }
+`
+
+
+export const Article = styled.div`
+    background: #fff;
+    margin-bottom: .085335rem;
+    .line-box{
+        height: .486375rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 .085335rem;
+        .content-left {
+            display: flex;
+            align-items: center;
+            .text {
+                font-size: .11rem;
+                color: #666;
+            }
+        }
+        .content-right {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .waterfall{
+        width:100%;
+        overflow:hidden;
+        display: block;
+        white-space: nowrap;
+        .showScroll{
+            width:fit-content;
+        }
+        .item{
+            display: inline-block;
+            width: 1.28rem;
+            margin-bottom: .162135rem;
+            box-shadow: none;
+            margin-right: .085335rem;
+            border-radius: 0;
+            vertical-align: top;
+            img {
+                width: 100%;
+                display: block;
+                border: none;
+            }
+            &:first-child {
+                margin-left: .085335rem;
+            }
+            .item-info{
+                border: 1px solid #f0f0f0;
+                border-top: none;
+                border-radius: 0 0 .2rem .2rem;
+                padding: .1024rem .0896rem .110935rem;
+                .block-cont{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: .098135rem;
+                    .head-photo{
+                        width: .19625rem;
+                        img{
+                            width: 100%;
+                            border-radius:50%;
+                        }
+                    }
+                    .account{
+                        width: .546125rem;
+                        margin-left: .085335rem;
+                    }
+                }
+                .name{
+                    white-space: normal;
+                    height: .30719rem;
+                    font-size: .11rem;
+                    line-height: .15rem;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+`
+
+
+export const ImgShow = styled.div`
+    img{
+        width:100%
+    }
+`
+
+export const TitleShow = styled.div`
+    padding: .085335rem;
+    h4{
+        text-align:center;
+        font-size:.18rem;
+    }
+    p{
+        span{
+            font-size:.18rem;
+            color: #666666;
+            display:block
         }
     }
 `

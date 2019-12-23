@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Icon} from 'antd-mobile'
 import {Top} from './home'
-
+import { withRouter } from 'react-router-dom'
 function mapStateToProps(state){
     return {
         data:state.toJS().Home.data,
@@ -24,6 +24,7 @@ const mapDispatchProps=(dispatch)=>{
         })}
     }
 }
+@withRouter
 class top extends Component {
     constructor(){
         super()

@@ -29,21 +29,22 @@ class swiper extends Component {
     render() {
         
         if(this.props.data !== this.state.data){
-            
+            let that = this
             setTimeout(() => {
-                this.swiper && this.swiper.destroy()
-                    this.swiper=new Swiper1 ('.swiper-container', {
+                that.Myswiper && that.Myswiper.destroy()
+                that.Myswiper=new Swiper1 ('#swiper1', {
                         pagination: {
                         el: '.swiper-pagination',
                         },
                     }) 
-                }, 0);        
+                
+                }, 0);                
         }
         
         return (
             <PWrap className='productWrap'>
                 <div>
-                    <div className="swiper-container product-slide">
+                    <div id='swiper1' className="swiper-container product-slide">
                         <div className="swiper-wrapper">
                             {
                                 (this.props.data && this.props.data.video) ? (

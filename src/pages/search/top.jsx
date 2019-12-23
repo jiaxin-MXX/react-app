@@ -159,6 +159,7 @@ const TopSearch = (props)=>{
                     type:"display",
                     onoff:-1
                 })
+                
             },[props])
     let keyup=useCallback((e)=>{
          e.persist()

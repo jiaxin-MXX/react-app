@@ -1,7 +1,8 @@
 import React from 'react';
 import { Find,LL } from './search.js'
 import {connect} from 'react-redux'
-import { widthRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+
 function mapstate(state){
     return {
         ok:state.toJS().Search.ok
@@ -31,4 +32,4 @@ const find = (props)=>{
         </Find>
     )
 }
-export default connect(mapstate)(find)
+export default withRouter(connect(mapstate)(find))

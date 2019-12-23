@@ -18,13 +18,14 @@ const mapDispatchProps=(dispatch)=>{
 @withRouter
 @connect(mapstatetoprops,mapDispatchProps)
 class center extends Component {
-    click=(id)=>{
+    click=(id,shortTitle)=>{
         return ()=>{
             
             this.props.history.push({
                 pathname:'/product',
                 state:{
-                    id
+                    id,
+                    shortTitle
                 }
             })
         }
@@ -37,7 +38,7 @@ class center extends Component {
                     {
                         this.props.searchlist ? this.props.searchlist.map((value) => {
                             return (
-                                <div key={value.id} onClick={this.click(value.id)} className="item"><div className="a">
+                                <div key={value.id} onClick={this.click(value.id,value.shortTitle)} className="item"><div className="a">
                                     <div className="item-img"><img
                                         src={value.picUrl}
                                         alt="" className="responImg" /></div>

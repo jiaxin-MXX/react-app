@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import {Coun} from './product.js'
 class count extends Component {
+        click = (flag)=>{
+                return ()=>{
+                        if(flag){
+                                this.refs.value.innerText++
+                        }else{
+                                if(Number(this.refs.value.innerText-1)>=0){
+                                        this.refs.value.innerText--
+                                }
+                        }
+                        
+                }
+        }    
     render() {
+        
         return (
             <Coun className="product-opera bottom">
                     <div className="opera-cho">
                             <div className="model">
                                     <p className="model-name">数量</p>
-                                    <div className="number"><span className="items">-</span> <span
-                                                className="items">1</span> <span
-                                                className="items">+</span></div>
+                                    <div className="number"><span onClick={this.click(0)} className="items">-</span> <span
+                                                className="items" ref='value'>1</span> <span
+                                                className="items" onClick={this.click(1)}>+</span></div>
                             </div>
                     </div>
                     <div className="product-adv border-top-px">

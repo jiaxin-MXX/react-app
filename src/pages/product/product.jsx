@@ -9,6 +9,9 @@ import Info from './info'
 import Btm from './bottom'
 import Count from './count'
 import Eval from './evaluate'
+import Combo from './combo'
+import Article from './article'
+import Tarbar from './tarbar'
 @withRouter
 class product extends Component {
     state={
@@ -30,6 +33,9 @@ class product extends Component {
                         <Info></Info>
                         <Count></Count>
                         <Eval></Eval>
+                        <Combo></Combo>
+                        <Article></Article>
+                        <Tarbar></Tarbar>
                     </div>
                 </div>
                 <Btm></Btm> 

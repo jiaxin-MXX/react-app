@@ -8,6 +8,8 @@ import {Zhezhao } from './home/home'
 import Search from 'pages/search/search.jsx'
 import home from 'pages/home/homs'
 import classfiy from 'pages/classfiy/classfiy.jsx'
+import find from 'pages/find/main.jsx'
+import combo from 'pages/combo/combo.jsx'
 // import {  } from 'immutable'
 import product from 'pages/product/product.jsx'
 import list from 'pages/List/list.jsx'
@@ -70,12 +72,20 @@ class center extends Component {
                         component={classfiy}
                     />
                     <Route 
+                        path='/find'
+                        component={find}
+                    />
+                    <Route 
                         path='/product'
                         component={product}
                     />
                     <Route 
                         path='/list'
                         component={list}
+                    />
+                    <Route 
+                        path='/combo'
+                        component={combo}
                     />
                     <Redirect 
                         exact
@@ -84,7 +94,7 @@ class center extends Component {
                     />
                 </Switch>
                 <Route 
-                    component={['/product','/search','/list'].some((value)=>{
+                    component={['/product','/search','/list','/combo'].some((value)=>{
                         return value===this.props.location.pathname
                     })?'':Nav}
                 />

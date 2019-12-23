@@ -2,8 +2,10 @@ import styled from 'styled-components'
 import border from './border'
 export const Top = border(styled.div`
     height: .3754rem;
-    padding: .064rem .260265rem;
-    display: block;
+    display:flex;
+    padding: ${props => {
+        return props.styled.padding+''
+    }};
     background: #fff;
     .search-cont{
         background: #f5f5f5;
@@ -20,3 +22,4 @@ export const Top = border(styled.div`
         }
     }
 `)
+
