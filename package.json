@@ -9,7 +9,7 @@
     "better-scroll": "^1.15.2",
     "eject": "^0.0.4",
     "immutable": "^4.0.0-rc.12",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router-dom": "^5.1.2",
