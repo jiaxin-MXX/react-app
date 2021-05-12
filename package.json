@@ -17,7 +17,7 @@
     "react-transition-group": "^4.3.0",
     "redux-immutable": "^4.0.0",
     "serve": "^11.2.0",
-    "swiper": "^5.2.1"
+    "swiper": "^6.5.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
